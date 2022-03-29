@@ -1,0 +1,77 @@
+body {
+  margin: 0;
+  // font: 14px/1.5 "Helvetica Neue",Helvetica,Arial,"Microsoft Yahei","Hiragino Sans GB","Heiti SC","WenQuanYi Micro Hei",sans-serif;
+  font-family: "Untitled Sans", -apple-system, system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #e7e7e71c;
+}
+
+#root {
+  margin: 4em auto;
+}
+
+#root>div {
+  padding: 1.5em 3em;
+  border-radius: 2px;
+  height: 80vh;
+  flex-direction: column;
+  margin-left: 100px;
+}
+
+// storybook index style
+.storybook header h1 {
+  cursor: pointer;
+  font-variant: tabular-nums;
+  font-size: 80px;
+  font-weight: 500;
+  color: rgba(0, 0, 0, 0);
+
+  text-indent: -2px;
+  -webkit-background-clip: text;
+  background-clip: text;
+  background-image: radial-gradient(circle, #11181c, #101d46);
+
+  letter-spacing: max(min(-0.055em, -0.66vw), -0.06em);
+  line-height: 1;
+
+  margin-left: -10px;
+  margin-right: -10px;
+
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.storybook aside {
+  color:  #687076;
+  
+  h3 {
+
+    font-size: 19px;
+    font-variant: tabular-nums;
+    letter-spacing: -0.285px;
+    line-height: 27px;
+  }
+
+  li {
+    cursor: pointer;
+    list-style: none;
+  }
+}
+
+.storybook main {
+  color:  #2b2d2e;
+  margin-top: 6em;
+  line-height: 1.4em;
+  font-size: 15px;
+}
+
+
+// user custmus style
+.usr-color-fill-blue {
+  filter: invert(73%) sepia(99%) saturate(946%) hue-rotate(173deg) brightness(104%) contrast(104%);
+}
+
+.usr-color-fill-gold {
+  filter: invert(73%) sepia(99%) saturate(946%) hue-rotate(359deg) brightness(104%) contrast(104%);
+}

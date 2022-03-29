@@ -1,0 +1,20 @@
+// 色系
+$main-color: #a890ff;
+
+// box-sizing: border-box;
+[class^=mol-],
+[class^=mol-]::before,
+[class^=mol-]::after {
+    box-sizing: border-box;
+}
+
+
+// 組件可自定義預設樣式
+
+// Icon 
+// 兩個 Icon 並排時的預設間距
+.mol-icon + .mol-icon { margin-left: 10px; }
+
+// Modal
+// Modal Main 內 Icon 與 span 預設間距
+.mol-modal main .mol-icon + span { margin-left: 10px; }
