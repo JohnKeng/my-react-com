@@ -1,5 +1,5 @@
 import React, { ReactElement } from 'react'
-import ReactDOM, { flushSync } from 'react-dom'
+import ReactDOM from 'react-dom'
 
 import './style.scss'
 import scopedclassname from '../helpers/scopedclassname'
