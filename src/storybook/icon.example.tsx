@@ -1,5 +1,5 @@
 import React from 'react'
-import Icon from '../lib/icon/icon.com'
+import Icon from '../lib/icon'
 
 function IconExample() {
     return (<>
