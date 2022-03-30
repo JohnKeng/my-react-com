@@ -42,7 +42,7 @@ const MyInfo: React.FunctionComponent = () => {
 
     return (<>
         <button onClick={() => setVisible(!v)}>Info Card</button>
-        <Modal visible={!v} onClose={() => { }} closeBtn={false}>
+        <Modal visible={!v} onClose={() => { }} closeBtn={false} classname={'xxx'}>
             <Icon shape="icon_yulan" /><span>一則好消息</span>
             <p>哈 哈 哈 ! <span>這是一則預設開啟的好消息</span></p>
             <button onClick={toggleModal}>Close</button>
@@ -55,9 +55,7 @@ const MyInfo: React.FunctionComponent = () => {
 function countDownModal() {
     let secondsToGo = 3
 
-    
     const destroy = dialog('3秒後自動關閉')
-
     const timer = setInterval(() => {
         secondsToGo -= 1
         console.log(secondsToGo)

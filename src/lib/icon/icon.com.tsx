@@ -1,12 +1,12 @@
 import React from 'react'
-import classnames from '../helpers/classnames'
+import { classnames } from '../helpers'
 import './style.scss'
 
 interface IconProps extends React.SVGAttributes<SVGElement> {
     shape: string
 }
 const Icon: React.FunctionComponent<IconProps> = (
-    { className, shape, ...leftoverProps}
+    { className, shape, ...leftoverProps }
 ) => {
     return (
         <svg className={classnames('mol-icon', className)} {...leftoverProps}>

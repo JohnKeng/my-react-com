@@ -1,8 +1,7 @@
 import React, { ReactElement } from 'react'
 import ReactDOM from 'react-dom'
-
 import './style.scss'
-import scopedclassname from '../helpers/scopedclassname'
+import {classnames, scopedclassname} from '../helpers'
 import Icon from '../icon/icon.com'
 
 
@@ -13,8 +12,9 @@ interface Props {
     header?: string
     footer?: Array<ReactElement>
     onClose: React.MouseEventHandler
+    classname?:string
 }
-
+const scn = classnames
 const sc = scopedclassname('mol-modal')
 
 const Modal: React.FunctionComponent<Props> = (props) => {
@@ -30,13 +30,13 @@ const Modal: React.FunctionComponent<Props> = (props) => {
     const renderModal = (
         props.visible &&
         <>
-            <div className={sc('mask')} onClick={onClickMask}></div>
-            <div className={sc()}>
+            <div className={scn(sc('mask'),props.classname)} onClick={onClickMask}></div>
+            <div className={scn(sc(),props.classname)}>
                 {props.closeBtn && <div className={sc('close')} onClick={onClickClose}><Icon shape="guanbi"></Icon></div>}
                 {props.header && <header> {props.header} </header>}
-                <main>{props.children}</main>
+                <main className={scn('',props.classname)}>{props.children}</main>
                 {props.footer && props.footer.length > 0 &&
-                    <footer>
+                    <footer className={scn('',props.classname)}>
                         {props.footer.map((button, index) =>
                             React.cloneElement(button, { key: index })
                         )}
