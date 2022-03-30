@@ -12,7 +12,8 @@ const MyModal: React.FunctionComponent = () => {
 
     const [v, setVisible] = React.useState(false)
     const toggleModal: React.MouseEventHandler = () => {
-        setVisible(!v);
+        console.log('點了按鈕')
+        setVisible(!v)
     }
     // 自定義 Modal Footer  
     // footer?: Array<ReactElement>
@@ -27,6 +28,7 @@ const MyModal: React.FunctionComponent = () => {
             header={'Header'}
             footer={[b1, b2]}>
             <div>hi i am child</div>
+            <div>可以自訂標題、內容、底下按鈕。點擊背景、close 都會關閉</div>
         </Modal>
     </>)
 }
@@ -42,7 +44,7 @@ const MyInfo: React.FunctionComponent = () => {
         <button onClick={() => setVisible(!v)}>Info Card</button>
         <Modal visible={!v} onClose={() => { }} closeBtn={false}>
             <Icon shape="icon_yulan" /><span>一則好消息</span>
-            <p>哈 哈 哈 ! <span>這是一則好消息</span></p>
+            <p>哈 哈 哈 ! <span>這是一則預設開啟的好消息</span></p>
             <button onClick={toggleModal}>Close</button>
         </Modal>
     </>)
@@ -51,10 +53,10 @@ const MyInfo: React.FunctionComponent = () => {
 
 
 function countDownModal() {
-    let secondsToGo = 5
+    let secondsToGo = 3
 
-    const footer = <button onClick={() => close()}>OK</button>
-    const destroy = dialog('５秒後自動關閉', [footer])
+    
+    const destroy = dialog('3秒後自動關閉')
 
     const timer = setInterval(() => {
         secondsToGo -= 1
@@ -73,9 +75,9 @@ const ModalExample: React.FunctionComponent = () => {
         <p>Modal:</p>
         <MyModal /> <MyInfo />
         <button style={styles.bottonLeft} onClick={countDownModal}>Open modal to close in 5s</button>
-        <button style={styles.bottonLeft} onClick={() => info('提示訊息視窗，只能關閉')}>Info</button>
+        <button style={styles.bottonLeft} onClick={() => info('提示訊息視窗，只能按 Close 關閉')}>Info</button>
         <button style={styles.bottonLeft} onClick={() => alert('注意')}>Alert</button>
-        <button style={styles.bottonLeft} onClick={() => confirm('1', () => {
+        <button style={styles.bottonLeft} onClick={() => confirm('按 Sure or Not or Close btns 會 callback', () => {
             console.log('You click sure')
         }, () => {
             console.log('You click not')

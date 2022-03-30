@@ -53,7 +53,8 @@ const Modal: React.FunctionComponent<Props> = (props) => {
 
 
 Modal.defaultProps = {
-    closeBtn: true
+    closeBtn: true,
+    closeOnClickMask: false
 }
 
 export default Modal
